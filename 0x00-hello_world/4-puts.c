@@ -1,4 +1,4 @@
-#include <stdipn.h>
+#include <stdio.h>
 /*
  * this code print line using puts
  *
