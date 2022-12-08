@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
- * main - this code print line using puts
+ * main - print  line code using puts
  *
  * Return: 0
 */
