@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - print line od code using puts 
+ * main - print line od code using puts
  *
  * Description: This code print message
  *
