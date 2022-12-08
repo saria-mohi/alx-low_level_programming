@@ -1,8 +1,10 @@
 #include <stdio.h>
-/*
- * main - print message using puts
+/**
+ * main - print line od code using puts 
  *
- * Return: 0
+ * Description: This code print message
+ *
+ * Return: 0 
 */
 int main(void)
 {
