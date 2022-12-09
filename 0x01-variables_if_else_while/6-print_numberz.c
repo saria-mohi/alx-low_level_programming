@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - print all number from 0 to 9 using putchar
+ * main - print all numbers between 0 and 10
  *
  * Return: 0
 */
@@ -10,9 +10,9 @@ int main(void)
 {
 	int num;
 
-	for (num = 0; num <= 9; num++)
+	for (num = '0'; num <= '9'; num++)
 	{
-		putchar((num % 10) + '0');
+		putchar(num);
 	}
 	printf("\n");
 	return (0);
