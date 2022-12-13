@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-	int i, j, k, c;
+	unsigned long i, j, k, c;
 
 	i = 0;
 	j = 0;
@@ -15,7 +15,7 @@ int main(void)
 		k = i + j;
 		i = j;
 		j = k;
-		printf("%d", k);
+		printf("%lu", k);
 		if (c == 49)
 			printf("\n");
 		else
