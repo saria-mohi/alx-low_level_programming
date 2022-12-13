@@ -19,5 +19,5 @@ int main(void)
 		t0 = t1;
 		t1 = s;
 	}
-	return (0)
+	return (0);
 }
