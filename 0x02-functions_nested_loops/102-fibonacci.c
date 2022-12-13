@@ -6,20 +6,22 @@
 */
 int main(void)
 {
-	unsigned long i, j, k, c;
+	int count = 3;
+	long int first = 1, second = 2;
+	long int next = first + second;
 
-	i = 0;
-	j = 0;
-	for (c = 0; c < 50; c++)
+	printf("%lu, ", first);
+	printf("%lu, ", second);
+	while (count <= 50)
 	{
-		k = i + j;
-		i = j;
-		j = k;
-		printf("%lu", k);
-		if (c == 49)
-			printf("\n");
+		if (count == 50)
+			printf("%lu \n", next);
 		else
-			printf(", ");
+			printf("%lu, ", next);
+		first = second;
+		second = next;
+		next = first + second;
+		count++;
 	}
 	return (0);
 }
