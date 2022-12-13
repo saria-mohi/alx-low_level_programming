@@ -9,8 +9,10 @@ int main(void)
 	char statement[] = "_putchar";
 	int i;
 
-	for (i = 0; i < statement.length(); i++)
-		putchar(i);
+	for (i = 0; i < sizeof(statement); i++)
+	{
+		putchar(statement[i]);
+	}
 	putchar('\n');
 	return (0);
 }
