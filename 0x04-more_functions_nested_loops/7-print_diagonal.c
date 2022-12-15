@@ -1,11 +1,14 @@
 #include "main.h"
+
 /**
  * print_line - print the _ as n times
- * @n: is number to drwa line from _
+ * @n: is number to drwa line from \
  */
+
 void print_diagonal(int n)
 {
-	int i, j;
+	int i;
+	int j;
 
 	if (n <= 0)
 		_putchar('\n');
@@ -14,9 +17,7 @@ void print_diagonal(int n)
 		for (i = 0; i < n; i++)
 		{
 			for (j = 0; j < i; j++)
-			{
 				_putchar(' ');
-			}
 			_putchar('\\');
 			_putchar('\n');
 		}
