@@ -15,6 +15,7 @@ int main(void)
 			c = '\n';
 		else
 			c = ' ';
+
 		if (i % 3 == 0 && i % 5 == 0)
 			printf("FizzBuzz%c", c);
 		else if (i % 3 == 0)
