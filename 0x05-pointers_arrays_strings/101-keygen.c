@@ -21,7 +21,6 @@ int main(void)
 
 	srand(time(NULL));
 
-	srand((unsigned int) (now % 937));
 	for (i = 0; i < n; i++)
 		password[i] = 33 + rand() % 94;
 	password[n] = '\0';
