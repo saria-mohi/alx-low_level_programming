@@ -1,6 +1,9 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#define SUM 2772
+
 /**
  * main - generate random password
  *
@@ -8,35 +11,26 @@
  */
 int main(void)
 {
-	int i, pass1, pass2, c;
-
-	char password[84];
+	int sum = 0, n = 0, i = 0;
+	char str[100];
 
 	srand(time(NULL));
-
-	while (c < 2772)
+	while (sum < SUM)
 	{
-		password[i] = 33 + rand() % 94;
-		c += password[i++];
-	}
-	password[i] = '\0';
-
-	if (c != 2772)
-	{
-		pass1 = (c - 2772) / 2;
-		pass2 = (c - 2772) / 2;
-		if ((c - 2772) % 2 != 0)
-			pass1++;
-		for (i = 0; password[i]; i++)
+		if (SUM - sum < 48)
+			sum -= str[--i];
+		else if (SUM - sum <= 126)
+			n = SUM - sum;
+		else
+			n = rand() % (126 - 48) + 48;
+		if (n)
 		{
-			if (password[i] >= (33 + pass2))
-			{
-				password[i] -= pass2;
-				break;
-			}
+			str[i++] = n;
+			sum += n;
 		}
+		n = 0;
 	}
-	printf("%s", password);
-
+	str[i] = '\0';
+	printf("%s", str);
 	return (0);
 }
