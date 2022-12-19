@@ -9,6 +9,7 @@
 int main(void)
 {
 	int n = 9;
+	 int i;
 
 	char password[1024];
 
@@ -18,10 +19,10 @@ int main(void)
 			break;
 	}
 
-	time_t now = time(NULL);
+	srand(time(NULL));
 
 	srand((unsigned int) (now % 937));
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 		password[i] = 33 + rand() % 94;
 	password[n] = '\0';
 	printf("%s\n", password);
