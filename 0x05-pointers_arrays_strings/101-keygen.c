@@ -11,7 +11,7 @@ int main(void)
 	int n = 9;
 	 int i;
 
-	char password[1024];
+	char password[80];
 
 	while (1)
 	{
