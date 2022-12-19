@@ -8,22 +8,26 @@
  */
 int main(void)
 {
-	int n = 9;
-	 int i;
+	int i, n, s;
 
-	char password[80];
-
-	while (1)
-	{
-		if (n >= 8 && n <= 1023)
-			break;
-	}
+	s = 0;
+	char password[84];
 
 	srand(time(NULL));
 
-	for (i = 0; i < n; i++)
-		password[i] = 33 + rand() % 94;
-	password[n] = '\0';
-	printf("%s\n", password);
+	for (i = 0; i < 100; i++)
+	{
+		password[i] = rand() % 78;
+		s += (password[i] + '0');
+		putchar(password[i] + '0');
+		putchar(password[i] + '0');
+		if ((2772 - s) - '0' < 78)
+		{
+			n = 2772 - s - '0';
+			s += n;
+			putchar(n + '0');
+			break;
+		}
+	}
 	return (0);
 }
