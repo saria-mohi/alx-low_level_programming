@@ -1,13 +1,12 @@
 #include "main.h"
+#include <string.h>
 /**
- * rev_string - reverses String
- * @s: is Astring to reverse
+ * rev_string - function use to reverse String
+ * @s: is String wanna to revrs
  */
 void rev_string(char *s)
 {
-	char temp;
-
-	int i, len;
+	int i, j, len;
 
 	i = 0;
 
@@ -15,12 +14,11 @@ void rev_string(char *s)
 	{
 		i++;
 	}
-	len = i - 1;
+	len = i;
 
-	for (i = 0; i < len / 2; i++)
+	for (j = len - 1; j >= 0; j--)
 	{
-		temp = s[i];
-		s[i] = s[len];
-		s[len--] = temp;
+		_putchar(s[j]);
 	}
+	_putchar('\n');
 }
