@@ -6,7 +6,7 @@
  */
 char *leet(char *str)
 {
-	char ch[] = {'a', 'e', 'o', 't', 'l','A', 'E', 'O', 'T', 'L', '\0'};
+	char ch[] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L', '\0'};
 	char num[] = "4433007711";
 
 	int i, j;
