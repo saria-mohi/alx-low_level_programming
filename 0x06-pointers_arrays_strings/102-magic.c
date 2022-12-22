@@ -1,9 +1,4 @@
 #include <stdio.h>
-/**
- * main - change a[5] using pointer;
- *
- * Return: 0
- */
 
 int main(void)
 {
