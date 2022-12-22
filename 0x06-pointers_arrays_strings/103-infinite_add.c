@@ -59,7 +59,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			r[i] -= 10;
 		}
 		s2--;
-		index++;
+		i++;
 		if (size_r == i && (s2 != n2 - 1 || count == 1))
 			return (0);
 	}
@@ -72,7 +72,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		r[i--] = 0;
 	}
-	index2 = 0;
+	j = 0;
 	while (j <= i)
 	{
 		count = r[i];
