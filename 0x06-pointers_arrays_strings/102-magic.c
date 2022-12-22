@@ -1,5 +1,6 @@
 #include <stdio.h>
-/* main - function to magic\n Return: 0 */
+/**
+ *  main - function to magic\n Return: 0 \n */
 int main(void)
 {
 	int n;
