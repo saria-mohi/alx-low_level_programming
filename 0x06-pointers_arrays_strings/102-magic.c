@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/** main - magic function \n Retun: 0 \n */
 int main(void)
 {
 	int n;
