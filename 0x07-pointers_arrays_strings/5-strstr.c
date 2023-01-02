@@ -21,7 +21,11 @@ char *_strstr(char *haystack, char *needle)
 			j = 0;
 	}
 	if (j == l)
+	{
 		return (needle);
+	}
 	else
+	{
 		return (0);
+	}
 }
