@@ -7,12 +7,12 @@
  */
 int squareroot(int n, int c)
 {
-	if (c < 1)
+	if (n < c * c)
 		return (-1);
 	else if (n == c * c)
 		return (c);
 	else
-		return (squareroot(n, c - 1));
+		return (squareroot(n, c + 1));
 }
 /**
  * _sqrt_recursion - function to print sqrt
@@ -24,5 +24,5 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 	else
-		return (squareroot(n, (n + 1) / 2));
+		return (squareroot(n, (n,0));
 }
