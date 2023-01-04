@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * palindrome - checks if start and end of string matches
- * @str: string
- * @st: start of string 0
- * @end: end of string from is_palindrome, from length
- * Return: number present 1 or 0
+ * palindrome - function check end of string
+ * @str: is String
+ * @st: start of String
+ * @end: end of String
+ * Return: String is palindrome or not
  */
 int palindrome(char str[], int st, int end)
 {
@@ -16,29 +16,27 @@ int palindrome(char str[], int st, int end)
 		return (palindrome(str, st + 1, end - 1));
 	return (1);
 }
-
 /**
- * lengthc - finds the length count
- * @s: input
- * Return: length size
+ * strLen - function to find length of String
+ * @s: is the String
+ * Return: length of String
  */
-int lengthc(char *s)
+int strLen(char *s)
 {
 	if (*s != '\0')
-		return (1 + lengthc(s + 1));
+		return (1 + strLen(s + 1));
 	return (0);
 }
-
 /**
- * is_palindrome - Entry Point
- * @s: input
- * Return: 0
+ * is_palindrome - function to call other functions
+ * @s: is String wanna to check
+ * Return: 1 if String is palindrome or 0 if not
  */
 int is_palindrome(char *s)
 {
 	int len;
 
-	len = lengthc(s);
+	len = strLen(s);
 
 	if (len == 0)
 		return (1);
