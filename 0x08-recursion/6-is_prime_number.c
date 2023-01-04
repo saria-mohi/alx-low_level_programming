@@ -5,14 +5,14 @@
  * @i: is iterator
  * Return: number present prime
  */
-int CheckPrime(int i, int num)
+int CheckPrime(int num, int i)
 {
-	if (num == i)
-		return (0);
-	else if (num % i == 0)
+	if (i == 1)
 		return (1);
+	else if (num % i == 0)
+		return (0);
 	else
-		return (CheckPrime(i - 1, num));
+		return (CheckPrime(num, i - 1));
 }
 
 /**
@@ -22,8 +22,8 @@ int CheckPrime(int i, int num)
  */
 int is_prime_number(int n)
 {
-	if (n == 2)
-		return (1);
+	if (n <= 1)
+		return (0);
 	else if (CheckPrime(n, n  / 2) > 0)
 		return (1);
 	return (0);
