@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
-/**strtow - function split string in to sub string
- * @str: is String wanna to split it
- * Return: NULL if str == NULL or str == "" or word f String
+/**
+ * count_word - function to count number of word
+ * @s: is String wanna to count it
+ * Return: count of word
  */
 int count_word(char *s)
 {
@@ -21,12 +22,11 @@ int count_word(char *s)
 
 	return (w);
 }
+
 /**
- * **strtow - splits a string into words
- * @str: string to split
- *
- * Return: pointer to an array of strings (Success)
- * or NULL (Error)
+ * strtow - function split string in to sub string
+ * @str: is String wanna to split it
+ * Return: NULL if str == NULL or str == "" or word f String
  */
 char **strtow(char *str)
 {
