@@ -1,19 +1,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
- * is_digit - print the number just
- * @s: is character to wanna check
- *
- * Return: 1 if is digit 0 if not
- */
-int is_digit(char *s)
+  * _isdigit - tells if the string consists of digits
+  * @argv: pointer to current item in argument
+  * Return: return 0 if all digits, 1 if not all digits.
+  */
+int _isdigit(char *argv)
 {
-	int i = 0;
+	int i;
 
-	while (s[i])
+	i = 0;
+	while (argv[i])
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (argv[i] >= '0' && argv[i] <= '9')
 			i++;
 		else
 			return (1);
@@ -21,37 +23,37 @@ int is_digit(char *s)
 	return (0);
 }
 /**
- * _atoi - function convert string to digit
- * @s: pointer of String
- * Return: digit
- */
+  * _atoi - converts a string of ascii digits to the values they represent
+  * @s: pointer to the source string
+  * Return: value of digits
+  */
 int _atoi(char *s)
 {
-	int i, str;
+	int i, result;
 
-	i = str = 0;
-
+	i = result = 0;
 	while (s[i])
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			str *= 10;
-			str += (s[i] - '0');
+			result *= 10;
+			result += (s[i] - '0');
 		}
 		i++;
 	}
-	return (str);
+	return (result);
 }
 /**
- * main - function to multiplication 2 number
- * @argc: count of arguments
- * @argv: array of arguments
- * Return: when success 0 or 98
- */
+  * main - main function call
+  * @argc: argument count
+  * @argv: 2D array of arguments
+  * Return: return 0 on success, 98 on failure
+  */
 int main(int argc, char *argv[])
 {
 	int i;
 
+	malloc();
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -59,7 +61,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (is_digit(argv[i]))
+		if (_isdigit(argv[i]))
 		{
 			printf("Error\n");
 			exit(98);
