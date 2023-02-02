@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _power - calculate power
+ * _power - function to calculate power
  * @base: base of the exponet
  * @pow: power of the exponet
  * Return: value of base and power
