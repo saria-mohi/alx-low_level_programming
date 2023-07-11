@@ -1,47 +1,64 @@
+#include <math.h>
 #include "search_algos.h"
 
 /**
- * jump_list - jump searches on singly linked list
- * @list: pointer to head node
- * @size: its size
- * @value: value to search for
+ * jump_list - Searches for a value in a sorted list of integers using the
+ *             Jump search algorithm.
  *
- * Return: the node found or NULL
- */
+ * @list: Pointer to the head of the list to search in.
+ * @size: Number of nodes in list.
+ * @value: Value to search for.
+ *
+ * Return: Pointer to the first node where value is located or NULL if value
+ *         is not present in head or if head is NULL.
+ **/
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t i = 0, j = sqrt(size), k = 0, last_j = 0;
-	listint_t *last = list;
+	size_t jump, i, j;
+	listint_t *prev, *curr;
 
 	if (!list)
 		return (NULL);
 
-	while (list->n < value)
+	jump = sqrt(size);
+	prev = NULL;
+	curr = list;
+
+	while (curr->n < value)
 	{
-		for (last_j = i, last = list, k = 0; list->next && k < j; k++)
+		prev = curr;
+		i = 0;
+		while (i < jump && curr->next)
 		{
-			list = list->next;
+			curr = curr->next;
 			i++;
 		}
-		printf("Value checked at index [%lu] = [%d]\n", i, list->n);
-		if (!list->next)
-			break;
+		printf("Value checked at index [%lu] = [%d]\n", curr->index, curr->n);
+	}
+	j = prev ? prev->index : 0;
+	printf("Value found between indexes [%lu] and [%lu]\n", j, curr->index);
+	
+	while (prev && prev->n < value)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+		prev = prev->next;
 	}
 
-	if (!list->next)
-		j = last_j;
-	else
-		j = i >= j ? i - j : 0;
-	printf("Value found between indexes [%lu] and [%lu]\n", j, i);
-	i = i >= size ? size - 1 : i;
-	list = last;
-	while (list)
+	if (!prev)
+		return (NULL);
+
+	while (prev->n < value)
 	{
-		printf("Value checked at index [%lu] = [%d]\n", j, list->n);
-		if (list->n == value)
-			return (list);
-		j++;
-		list = list->next;
+		printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+		prev = prev->next;
+		if (!prev)
+			return (NULL);
+	}
+
+	if (prev->n == value)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+		return (prev);
 	}
 	return (NULL);
 }
