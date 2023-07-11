@@ -34,7 +34,7 @@ int binary_rec(int *array, size_t left, size_t right, int value)
 	return (binary_rec(array, i + 1, right, value));
 }
 /**
- * binary_search - function that searches for a value in a sorted array
+ * advanced_binary  - function that searches for a value in a sorted array
  * of integers using the Binary search algorithm
  * @array: Type pointer of given array
  * @size: Type size of elements in the array
