@@ -1,3 +1,4 @@
+#include <math.h>
 #include "search_algos.h"
 
 /**
@@ -10,31 +11,51 @@
  **/
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t step, step_size;
-	listint_t *node, *jump;
+	size_t jump, i, j;
+	listint_t *prev, *curr;
 
-	if (list == NULL || size == 0)
+	if (!list)
 		return (NULL);
 
-	step = 0;
-	step_size = sqrt(size);
-	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
+	jump = sqrt(size);
+	prev = NULL;
+	curr = list;
+
+	while (curr->n < value)
 	{
-		node = jump;
-		for (step += step_size; jump->index < step; jump = jump->next)
+		prev = curr;
+		i = 0;
+		while (i < jump && curr->next)
 		{
-			if (jump->index + 1 == size)
-				break;
+			curr = curr->next;
+			i++;
 		}
-		printf("[%ld] = [%d]\n", jump->index, jump->n);
+		printf("Value checked at index [%lu] = [%d]\n", curr->index, curr->n);
+	}
+	j = prev ? prev->index : 0;
+	printf("Value found between indexes [%lu] and [%lu]\n", j, curr->index);
+
+	while (prev && prev->n < value)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+		prev = prev->next;
 	}
 
-	printf(" [%ld] and [%ld]\n",
-			node->index, jump->index);
+	if (!prev)
+		return (NULL);
 
-	for (; node->index < jump->index && node->n < value; node = node->next)
-		printf("[%ld] = [%d]\n", node->index, node->n);
-	printf("[%ld] = [%d]\n", node->index, node->n);
+	while (prev->n < value)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+		prev = prev->next;
+		if (!prev)
+			return (NULL);
+	}
 
-	return (node->n == value ? node : NULL);
+	if (prev->n == value)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+		return (prev);
+	}
+	return (NULL);
 }
