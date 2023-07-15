@@ -16,8 +16,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	if (list == NULL || size == 0)
 		return (NULL);
 
-	step = 0;
-	step_size = sqrt(size);
+	step = 0;step_size = sqrt(size);
 	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
 	{
 		node = jump;
